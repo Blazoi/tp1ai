@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Biblio de classes\\ManagementTache.cs",
               "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\Biblio de classes\\ManagementTache.cs",
               "RelativeToolTip": "Biblio de classes\\ManagementTache.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACYAAABQAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAowFMAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-18T21:49:02.615Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "Biblio de classes\\IConversionXML.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T21:44:25.485Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-18T21:44:25.485Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "Biblio de classes\\Tache.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T21:41:05.905Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-18T21:41:05.905Z"
             },
             {
               "$type": "Document",
@@ -94,8 +92,7 @@
               "RelativeToolTip": "KanbanMauiApp\\MainPage.xaml",
               "ViewState": "AgIAAJMAAAAAAAAAAAAAAKEAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-18T20:34:29.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-18T20:34:29.569Z"
             }
           ]
         }

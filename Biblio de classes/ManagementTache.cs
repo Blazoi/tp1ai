@@ -35,7 +35,7 @@ namespace Biblio_de_classes
                 //Ajouter les étapes à la liste
                 foreach (XmlNode etape in n["etapes"])
                 {
-                    //int num = (n["etapes"].ChildNodes.Count > 0) ? n["etapes"].ChildNodes.Count + 1 : 0;
+                    //int num = (n["etapes"].ChildNodes.Count > 0) ? n["etapes"].ChildNodes.Count + 1 : 0; -- Je vais peut-être réutiliser
                     etapes.Add(new Etape(int.Parse(etape.Attributes["no"].Value), etape.InnerText, Boolean.Parse(etape.Attributes["terminee"].Value)));
                 }
 
@@ -46,7 +46,47 @@ namespace Biblio_de_classes
         }
         void SauvegarderVersXML(string cheminFichier, List<Tache> taches)
         {
+            XmlDocument doc = new();
+            XmlElement Taches = doc.CreateElement("Taches");
 
+            foreach (Tache tache in taches)
+            {
+                XmlElement tacheElement = doc.CreateElement("tache");
+
+                //Ajouté attributs
+                tacheElement.SetAttribute("creation", tache.DateCreation.ToString());
+                tacheElement.SetAttribute("debut", tache.DateDebut.ToString());
+                tacheElement.SetAttribute("fin", tache.DateFin.ToString());
+
+                //Ajouté description
+                XmlElement description = doc.CreateElement("description");
+                description.InnerText = tache.Description;
+                tacheElement.AppendChild(description);
+
+                //Ajouté étapes
+                XmlElement etapes = doc.CreateElement("etapes");
+
+                foreach (Etape etape in tache.Etapes)
+                {
+                    //Créé l'élément
+                    XmlElement etapeElement = doc.CreateElement("etape");
+                    etapeElement.SetAttribute("terminee", etape.Terminee.ToString());
+                    etapeElement.SetAttribute("no", etape.Numero.ToString());
+                    etapeElement.InnerText = etape.Description;
+
+                    //Ajouté l'élément
+                    etapes.AppendChild(etapeElement);
+                }
+
+                tacheElement.AppendChild(etapes);
+
+                //Ajouté la tâche au root
+                Taches.AppendChild(tacheElement);
+            }
+
+            // Ajouté root et sauvegardé
+            doc.AppendChild(Taches);
+            doc.Save(cheminFichier);
         }
     }
 }
