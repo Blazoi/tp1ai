@@ -104,12 +104,16 @@ namespace Biblio_de_classes
 
         public void AjouterEtape(Tache tache, string description)
         {
+            //Créé l'étape
+            Etape etape = new Etape(Taches.Count + 1, description, false);
 
+            //Ajouté l'étape
+            Taches.Find(element => element.Description == tache.Description).Etapes.Add(etape);
         }
 
         public void SupprimerEtape (Tache tache, Etape etape)
         {
-
+            Taches.Find(element => element.Description == tache.Description).Etapes.Remove(etape);
         }
 
         public void TerminerEtape (Tache tache, Etape etape)

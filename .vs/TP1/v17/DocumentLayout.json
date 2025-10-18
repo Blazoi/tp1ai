@@ -1,12 +1,77 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{36481858-B2C8-4A4E-B365-5722CA0ABB54}|Biblio de classes\\Biblio de classes.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\biblio de classes\\managementtache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36481858-B2C8-4A4E-B365-5722CA0ABB54}|Biblio de classes\\Biblio de classes.csproj|solutionrelative:biblio de classes\\managementtache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36481858-B2C8-4A4E-B365-5722CA0ABB54}|Biblio de classes\\Biblio de classes.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\biblio de classes\\tache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36481858-B2C8-4A4E-B365-5722CA0ABB54}|Biblio de classes\\Biblio de classes.csproj|solutionrelative:biblio de classes\\tache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36481858-B2C8-4A4E-B365-5722CA0ABB54}|Biblio de classes\\Biblio de classes.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\biblio de classes\\etape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36481858-B2C8-4A4E-B365-5722CA0ABB54}|Biblio de classes\\Biblio de classes.csproj|solutionrelative:biblio de classes\\etape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ManagementTache.cs",
+              "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\Biblio de classes\\ManagementTache.cs",
+              "RelativeDocumentMoniker": "Biblio de classes\\ManagementTache.cs",
+              "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\Biblio de classes\\ManagementTache.cs",
+              "RelativeToolTip": "Biblio de classes\\ManagementTache.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wHEAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T23:17:22.168Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Etape.cs",
+              "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\Biblio de classes\\Etape.cs",
+              "RelativeDocumentMoniker": "Biblio de classes\\Etape.cs",
+              "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\Biblio de classes\\Etape.cs",
+              "RelativeToolTip": "Biblio de classes\\Etape.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T23:18:45.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Tache.cs",
+              "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\Biblio de classes\\Tache.cs",
+              "RelativeDocumentMoniker": "Biblio de classes\\Tache.cs",
+              "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\Biblio de classes\\Tache.cs",
+              "RelativeToolTip": "Biblio de classes\\Tache.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T23:18:26.667Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
