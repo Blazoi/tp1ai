@@ -1,0 +1,11 @@
+C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\bin\Debug\net9.0\KanbanLibrary.deps.json
+C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\bin\Debug\net9.0\KanbanLibrary.dll
+C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\bin\Debug\net9.0\KanbanLibrary.pdb
+C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\obj\Debug\net9.0\KanbanLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\obj\Debug\net9.0\KanbanLibrary.AssemblyInfoInputs.cache
+C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\obj\Debug\net9.0\KanbanLibrary.AssemblyInfo.cs
+C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\obj\Debug\net9.0\KanbanLibrary.csproj.CoreCompileInputs.cache
+C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\obj\Debug\net9.0\KanbanLibrary.dll
+C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\obj\Debug\net9.0\refint\KanbanLibrary.dll
+C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\obj\Debug\net9.0\KanbanLibrary.pdb
+C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\obj\Debug\net9.0\ref\KanbanLibrary.dll

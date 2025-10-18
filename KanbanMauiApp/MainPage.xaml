@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KanbanMauiApp.MainPage"
+             BackgroundColor="#F5F5F5">
+
+
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="20">
+
+                <Label Text="Tableau des tâches"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#333"
+                   HorizontalOptions="Center"/>
+
+                <HorizontalStackLayout Spacing="10">
+                    <!-- Planifiées -->
+                    <Border Stroke="#4682B4" StrokeShape="RoundRectangle 12" StrokeThickness="1"
+                        Background="#E6F0FA" Padding="10" WidthRequest="200">
+                        <VerticalStackLayout>
+                            <Label Text="Planifiées" FontAttributes="Bold" TextColor="#4682B4" HorizontalOptions="Center"/>
+                            <CollectionView x:Name="PlannedTasks" SelectionMode="Single"
+                                        SelectionChanged="OnTaskSelected"
+                                        HeightRequest="200">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Stroke="#4682B4" Style="{StaticResource TaskItemCommonStyle}" BackgroundColor="White">
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup Name="CommonStates">
+                                                    <VisualState Name="Normal">
+                                                        <VisualState.Setters>
+                                                            <Setter Property="BackgroundColor" Value="White"/>
+                                                        </VisualState.Setters>
+                                                    </VisualState>
+                                                    <VisualState Name="Selected">
+                                                        <VisualState.Setters>
+                                                            <Setter Property="BackgroundColor" Value="#B0C4DE"/>
+                                                        </VisualState.Setters>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+
+                                            <Label Text="{Binding Description}" TextColor="#333"/>
+                                        </Border>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- En cours -->
+                    <Border Stroke="#DAA520" StrokeShape="RoundRectangle 12" StrokeThickness="1"
+                        Background="#FFF8DC" Padding="10" WidthRequest="200">
+                        <VerticalStackLayout>
+                            <Label Text="En cours" FontAttributes="Bold" TextColor="#DAA520" HorizontalOptions="Center"/>
+                            <CollectionView x:Name="InProgressTasks" SelectionMode="Single"
+                                        SelectionChanged="OnTaskSelected"
+                                        HeightRequest="200">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Stroke="#DAA520" Style="{StaticResource TaskItemCommonStyle}" BackgroundColor="White">
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup Name="CommonStates">
+                                                    <VisualState Name="Normal">
+                                                        <VisualState.Setters>
+                                                            <Setter Property="BackgroundColor" Value="White"/>
+                                                        </VisualState.Setters>
+                                                    </VisualState>
+                                                    <VisualState Name="Selected">
+                                                        <VisualState.Setters>
+                                                            <Setter Property="BackgroundColor" Value="#FFFACD"/>
+                                                        </VisualState.Setters>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+
+                                            <Label Text="{Binding Description}" TextColor="#333"/>
+                                        </Border>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Terminées -->
+                    <Border Stroke="#2E8B57" StrokeShape="RoundRectangle 12" StrokeThickness="1"
+                        Background="#E8F5E9" Padding="10" WidthRequest="200">
+                        <VerticalStackLayout>
+                            <Label Text="Terminées" FontAttributes="Bold" TextColor="#2E8B57" HorizontalOptions="Center"/>
+                            <CollectionView x:Name="CompletedTasks" SelectionMode="Single"
+                                        SelectionChanged="OnTaskSelected"
+                                        HeightRequest="200">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Stroke="#2E8B57" Style="{StaticResource TaskItemCommonStyle}" BackgroundColor="White">
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup Name="CommonStates">
+                                                    <VisualState Name="Normal">
+                                                        <VisualState.Setters>
+                                                            <Setter Property="BackgroundColor" Value="White"/>
+                                                        </VisualState.Setters>
+                                                    </VisualState>
+                                                    <VisualState Name="Selected">
+                                                        <VisualState.Setters>
+                                                            <Setter Property="BackgroundColor" Value="#90EE90"/>
+                                                        </VisualState.Setters>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+                                            <Label Text="{Binding Description}" TextColor="#333"/>
+                                        </Border>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </VerticalStackLayout>
+                    </Border>
+                </HorizontalStackLayout>
+
+                <!-- Détails tâche -->
+                <Border Stroke="#ccc" StrokeShape="RoundRectangle 12" StrokeThickness="1"
+                    Background="White" Padding="15">
+                    <VerticalStackLayout Grid.Row="1"
+                     Padding="10"
+                     Spacing="10">
+
+                        <Label Text="Détails de la tâche" FontSize= "18" FontAttributes="Bold" TextColor="#444"/>
+
+                        <!-- ScrollView pour permettre le défilement -->
+                        <ScrollView Orientation="Vertical" HeightRequest="200">
+                            <VerticalStackLayout Spacing="5">
+
+                                <Label x:Name="TaskDescription"
+                   Text="Description..."
+                   FontAttributes="Bold"
+                   LineBreakMode="WordWrap"/>
+
+                                <Label x:Name="TaskDates"
+                   Text="Dates..."
+                   FontSize="12"
+                   TextColor="Gray"/>
+
+                                <CollectionView x:Name="TaskSteps"
+                            SelectionMode="Single"
+                            SelectionChanged="OnStepSelected"
+                            HeightRequest="150">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding}"
+                               FontSize="14"/>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+
+                            </VerticalStackLayout>
+                        </ScrollView>
+
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Gestion des tâches -->
+                <Border Stroke="#ddd" StrokeShape="RoundRectangle 12" StrokeThickness="1"
+                    Background="White" Padding="12">
+                    <VerticalStackLayout>
+                        <Label Text="Gestion des tâches" FontAttributes="Bold" FontSize="18" TextColor="#444"/>
+                        <HorizontalStackLayout Spacing="12" HorizontalOptions="Center">
+                            <Button Text="Ajouter tâche" Style="{StaticResource OutlinedButtonStyle}" Clicked="OnAddTask"/>
+                            <Button Text="Supprimer tâche" Style="{StaticResource OutlinedButtonStyle}" Clicked="OnDeleteTask"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Gestion des étapes -->
+                <Border Stroke="#ddd" StrokeShape="RoundRectangle 12" StrokeThickness="1"
+                    Background="White" Padding="12">
+                    <VerticalStackLayout>
+                        <Label Text="Gestion des étapes" FontAttributes="Bold" FontSize="18" TextColor="#444"/>
+                        <HorizontalStackLayout Spacing="12" HorizontalOptions="Center">
+                            <Button Text="Ajouter étape" Style="{StaticResource OutlinedButtonStyle}" Clicked="OnAddStep"/>
+                            <Button Text="Supprimer étape" Style="{StaticResource OutlinedButtonStyle}" Clicked="OnDeleteStep"/>
+                            <Button Text="Terminer étape" Style="{StaticResource OutlinedButtonStyle}" Clicked="OnCompleteStep"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- À propos -->
+                <Button Text="À propos..."
+                    Style="{StaticResource FilledButtonStyle}"
+                    HorizontalOptions="Center"
+                    WidthRequest="160"
+                    Clicked="OnAboutClicked"/>
+            </VerticalStackLayout>
+        </ScrollView>
+
+
+
+</ContentPage>
