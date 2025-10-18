@@ -10,6 +10,7 @@ namespace Biblio_de_classes
 {
     internal class ManagementTache : IConversionXML
     {
+        private List<Tache> Taches = new List<Tache>();
         public List<Tache> ChargerDepuisXML(string cheminFichier)
         {
             //Variable à retourner
@@ -47,7 +48,7 @@ namespace Biblio_de_classes
         public void SauvegarderVersXML(string cheminFichier, List<Tache> taches)
         {
             XmlDocument doc = new();
-            XmlElement Taches = doc.CreateElement("Taches");
+            XmlElement TachesElement = doc.CreateElement("Taches");
 
             foreach (Tache tache in taches)
             {
@@ -81,12 +82,39 @@ namespace Biblio_de_classes
                 tacheElement.AppendChild(etapes);
 
                 //Ajouté la tâche au root
-                Taches.AppendChild(tacheElement);
+                TachesElement.AppendChild(tacheElement);
             }
 
             // Ajouté root et sauvegardé
-            doc.AppendChild(Taches);
+            doc.AppendChild(TachesElement);
             doc.Save(cheminFichier);
+        }
+
+        public void AjouterTache(string description)
+        {
+            Tache tache = new Tache(description, DateOnly.FromDateTime(DateTime.Now), null, null, new List<Etape>(), 0);
+            Taches.Add(tache);
+        }
+
+        public void SupprimerTache(Tache tache)
+        {
+            Tache tacheAEnlever = Taches.Find(element => element.Description == tache.Description);
+            Taches.Remove(tacheAEnlever);
+        }
+
+        public void AjouterEtape(Tache tache, string description)
+        {
+
+        }
+
+        public void SupprimerEtape (Tache tache, Etape etape)
+        {
+
+        }
+
+        public void TerminerEtape (Tache tache, Etape etape)
+        {
+
         }
     }
 }
