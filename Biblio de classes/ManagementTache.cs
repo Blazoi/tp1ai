@@ -10,7 +10,7 @@ namespace Biblio_de_classes
 {
     internal class ManagementTache : IConversionXML
     {
-        List<Tache> ChargerDepuisXML(string cheminFichier)
+        public List<Tache> ChargerDepuisXML(string cheminFichier)
         {
             //Variable à retourner
             List<Tache> liste = new();
@@ -44,7 +44,7 @@ namespace Biblio_de_classes
 
             return liste;
         }
-        void SauvegarderVersXML(string cheminFichier, List<Tache> taches)
+        public void SauvegarderVersXML(string cheminFichier, List<Tache> taches)
         {
             XmlDocument doc = new();
             XmlElement Taches = doc.CreateElement("Taches");
