@@ -118,7 +118,8 @@ namespace Biblio_de_classes
 
         public void TerminerEtape (Tache tache, Etape etape)
         {
-
+            List<Etape> EtapesListe = Taches.Find(element => element.Description == tache.Description).Etapes;
+            EtapesListe.Find(element => element.Description == etape.Description).Terminee = true;
         }
     }
 }
