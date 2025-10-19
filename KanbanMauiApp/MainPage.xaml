@@ -131,24 +131,23 @@
                             <VerticalStackLayout Spacing="5">
 
                                 <Label x:Name="TaskDescription"
-                   Text="Description..."
-                   FontAttributes="Bold"
-                   LineBreakMode="WordWrap"
-                   TextColor="Black"/>
+                                    Text="Description..."
+                                    FontAttributes="Bold"
+                                    LineBreakMode="WordWrap"
+                                    TextColor="Black"/>
 
                                 <Label x:Name="TaskDates"
-                   Text="Dates..."
-                   FontSize="12"
-                   TextColor="Gray"/>
+                                    Text="Dates..."
+                                    FontSize="12"
+                                    TextColor="Gray"/>
 
                                 <CollectionView x:Name="TaskSteps"
-                            SelectionMode="Single"
-                            SelectionChanged="OnStepSelected"
-                            HeightRequest="150">
+                                    SelectionMode="Single"
+                                    SelectionChanged="OnStepSelected"
+                                    HeightRequest="150">
                                     <CollectionView.ItemTemplate>
                                         <DataTemplate>
-                                            <Label Text="{Binding}"
-                               FontSize="14"/>
+                                            <Label  Text="{Binding Description}" TextColor="#333" FontSize="14" />
                                         </DataTemplate>
                                     </CollectionView.ItemTemplate>
                                 </CollectionView>

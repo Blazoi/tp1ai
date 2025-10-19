@@ -11,7 +11,7 @@ namespace KanbanLibrary
 {
     public class ManagementTache : IConversionXML
     {
-        private List<Tache> Taches = new List<Tache>();
+        public List<Tache> Taches { get; set; }
         public List<Tache> ChargerDepuisXML(string cheminFichier)
         {
             //Variable à retourner

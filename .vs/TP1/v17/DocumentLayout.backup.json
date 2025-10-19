@@ -7,16 +7,8 @@
       "RelativeMoniker": "D:0:0:{BA0D23B6-649B-4D0B-B752-C3294FF0C2EF}|KanbanMauiApp\\KanbanMauiApp.csproj|solutionrelative:kanbanmauiapp\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA0D23B6-649B-4D0B-B752-C3294FF0C2EF}|KanbanMauiApp\\KanbanMauiApp.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\kanbanmauiapp\\data\\taches.xml||{6B79B2C4-8503-4A04-8248-ADCEF2B49CB1}",
-      "RelativeMoniker": "D:0:0:{BA0D23B6-649B-4D0B-B752-C3294FF0C2EF}|KanbanMauiApp\\KanbanMauiApp.csproj|solutionrelative:kanbanmauiapp\\data\\taches.xml||{6B79B2C4-8503-4A04-8248-ADCEF2B49CB1}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BA0D23B6-649B-4D0B-B752-C3294FF0C2EF}|KanbanMauiApp\\KanbanMauiApp.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\kanbanmauiapp\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{BA0D23B6-649B-4D0B-B752-C3294FF0C2EF}|KanbanMauiApp\\KanbanMauiApp.csproj|solutionrelative:kanbanmauiapp\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6F8E1502-0136-408E-94F7-A99F063CFF04}|KanbanLibrary\\KanbanLibrary.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\kanbanlibrary\\managementtache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F8E1502-0136-408E-94F7-A99F063CFF04}|KanbanLibrary\\KanbanLibrary.csproj|solutionrelative:kanbanlibrary\\managementtache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6F8E1502-0136-408E-94F7-A99F063CFF04}|KanbanLibrary\\KanbanLibrary.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\kanbanlibrary\\tache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,6 +17,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{6F8E1502-0136-408E-94F7-A99F063CFF04}|KanbanLibrary\\KanbanLibrary.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\kanbanlibrary\\etape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6F8E1502-0136-408E-94F7-A99F063CFF04}|KanbanLibrary\\KanbanLibrary.csproj|solutionrelative:kanbanlibrary\\etape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA0D23B6-649B-4D0B-B752-C3294FF0C2EF}|KanbanMauiApp\\KanbanMauiApp.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\kanbanmauiapp\\data\\taches.xml||{6B79B2C4-8503-4A04-8248-ADCEF2B49CB1}",
+      "RelativeMoniker": "D:0:0:{BA0D23B6-649B-4D0B-B752-C3294FF0C2EF}|KanbanMauiApp\\KanbanMauiApp.csproj|solutionrelative:kanbanmauiapp\\data\\taches.xml||{6B79B2C4-8503-4A04-8248-ADCEF2B49CB1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F8E1502-0136-408E-94F7-A99F063CFF04}|KanbanLibrary\\KanbanLibrary.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\kanbanlibrary\\managementtache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F8E1502-0136-408E-94F7-A99F063CFF04}|KanbanLibrary\\KanbanLibrary.csproj|solutionrelative:kanbanlibrary\\managementtache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,14 +44,14 @@
               "RelativeDocumentMoniker": "KanbanMauiApp\\MainPage.xaml.cs",
               "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\MainPage.xaml.cs",
               "RelativeToolTip": "KanbanMauiApp\\MainPage.xaml.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAA9wD4AAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwDYAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-19T15:34:30.231Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "taches.xml",
               "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml",
               "RelativeDocumentMoniker": "KanbanMauiApp\\Data\\taches.xml",
@@ -59,8 +59,7 @@
               "RelativeToolTip": "KanbanMauiApp\\Data\\taches.xml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-10-19T15:32:32.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-19T15:32:32.364Z"
             }
           ]
         },
@@ -70,20 +69,20 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\MainPage.xaml",
               "RelativeDocumentMoniker": "KanbanMauiApp\\MainPage.xaml",
               "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\MainPage.xaml",
               "RelativeToolTip": "KanbanMauiApp\\MainPage.xaml",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAAAIUAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-10-19T15:34:29.39Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ManagementTache.cs",
               "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\ManagementTache.cs",
               "RelativeDocumentMoniker": "KanbanLibrary\\ManagementTache.cs",
@@ -91,12 +90,11 @@
               "RelativeToolTip": "KanbanLibrary\\ManagementTache.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAgwHUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T15:40:37.919Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-19T15:40:37.919Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Tache.cs",
               "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\Tache.cs",
               "RelativeDocumentMoniker": "KanbanLibrary\\Tache.cs",
@@ -109,13 +107,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Etape.cs",
               "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\Etape.cs",
               "RelativeDocumentMoniker": "KanbanLibrary\\Etape.cs",
               "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\Etape.cs",
               "RelativeToolTip": "KanbanLibrary\\Etape.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-19T15:40:35.451Z",
               "EditorCaption": ""
