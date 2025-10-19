@@ -13,9 +13,9 @@ namespace Biblio_de_classes
         public DateOnly? DateDebut { get; set; }
         public DateOnly? DateFin { get; set; }
         public List<Etape> Etapes { get; set; }
-        public int Statut { get; set; } = 0;
+        public int Statut { get; set; }
 
-        public Tache (string description, DateOnly dateCreation, DateOnly? dateDebut, DateOnly? dateFin, List<Etape> etapes, int statut)
+        public Tache (string description, DateOnly dateCreation, DateOnly? dateDebut, DateOnly? dateFin, List<Etape> etapes, int statut = 0)
         {
             Description = description;
             DateCreation = dateCreation;

@@ -1,35 +1,47 @@
 ﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
 using KanbanLibrary;
+
 namespace KanbanMauiApp
 {
     public partial class MainPage : ContentPage
     {
       
+        
+        ManagementTache manager = new();
 
         public MainPage()
         {
             InitializeComponent();
+            ChargerTachesDepuisFichier();
+            
         }
         // --- Charger les tâches depuis un fichier ---
         private void ChargerTachesDepuisFichier()
         {
- 
+            List<Tache> liste = manager.ChargerDepuisXML("C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml");
+            PlannedTasks.ItemsSource = liste;
+            BindingContext = liste;
         }
+
         // --- Sauvegarder les tâches dans un fichier ---
         private void Sauvegarder()
         {
-            
+            //manager.SauvegarderVersXML("C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml");
         }
         // --- Rafraîchir les listes ---
         private void RafraichirListes()
         {
-           
+            manager.ChargerDepuisXML("C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml");
         }
 
         // --- Sélection d’une tâche ---
         private void OnTaskSelected(object sender, SelectionChangedEventArgs e)
         {
-            
+            Tache selection = e.CurrentSelection.FirstOrDefault() as Tache;
+            TaskDescription.Text = selection.Description;
+            string format = "dddd MMM dd, yyyy";
+            TaskDates.Text = $"Date de création : {selection.DateCreation.ToString(format)}\nDate de début : {selection.DateDebut?.ToString(format) ?? "non définie"}\nDate de fin : {selection.DateFin?.ToString(format) ?? "non définie"}";
         }
 
         // --- Sélection d’une étape ---

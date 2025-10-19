@@ -36,11 +36,10 @@ namespace Biblio_de_classes
                 //Ajouter les étapes à la liste
                 foreach (XmlNode etape in n["etapes"])
                 {
-                    //int num = (n["etapes"].ChildNodes.Count > 0) ? n["etapes"].ChildNodes.Count + 1 : 0; -- Je vais peut-être réutiliser
                     etapes.Add(new Etape(int.Parse(etape.Attributes["no"].Value), etape.InnerText, Boolean.Parse(etape.Attributes["terminee"].Value)));
                 }
 
-                liste.Add(new Tache( desc, dateCreation, dateDebut, dateFin, etapes, 0));
+                liste.Add(new Tache( desc, dateCreation, dateDebut, dateFin, etapes));
             }
 
             return liste;
@@ -92,7 +91,7 @@ namespace Biblio_de_classes
 
         public void AjouterTache(string description)
         {
-            Tache tache = new Tache(description, DateOnly.FromDateTime(DateTime.Now), null, null, new List<Etape>(), 0);
+            Tache tache = new Tache(description, DateOnly.FromDateTime(DateTime.Now), null, null, new List<Etape>());
             Taches.Add(tache);
         }
 
@@ -105,7 +104,7 @@ namespace Biblio_de_classes
         public void AjouterEtape(Tache tache, string description)
         {
             //Créé l'étape
-            Etape etape = new Etape(Taches.Count + 1, description, false);
+            Etape etape = new Etape(Taches.Count + 1, description);
 
             //Ajouté l'étape
             Taches.Find(element => element.Description == tache.Description).Etapes.Add(etape);

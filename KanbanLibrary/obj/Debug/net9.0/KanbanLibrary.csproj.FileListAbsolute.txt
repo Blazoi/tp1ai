@@ -9,3 +9,4 @@ C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\obj\Debug\net9.0\KanbanLibrary
 C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\obj\Debug\net9.0\refint\KanbanLibrary.dll
 C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\obj\Debug\net9.0\KanbanLibrary.pdb
 C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\obj\Debug\net9.0\ref\KanbanLibrary.dll
+C:\Users\jackj\OneDrive\Desktop\TP1\KanbanLibrary\obj\Debug\net9.0\KanbanLibrary.sourcelink.json

@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KanbanMauiApp", "KanbanMaui
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KanbanTestProject", "KanbanTestProject\KanbanTestProject.csproj", "{54507F91-97A4-43C8-B035-F1B319AFBBD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblio de classes", "Biblio de classes\Biblio de classes.csproj", "{36481858-B2C8-4A4E-B365-5722CA0ABB54}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{54507F91-97A4-43C8-B035-F1B319AFBBD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54507F91-97A4-43C8-B035-F1B319AFBBD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54507F91-97A4-43C8-B035-F1B319AFBBD6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{36481858-B2C8-4A4E-B365-5722CA0ABB54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{36481858-B2C8-4A4E-B365-5722CA0ABB54}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{36481858-B2C8-4A4E-B365-5722CA0ABB54}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{36481858-B2C8-4A4E-B365-5722CA0ABB54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

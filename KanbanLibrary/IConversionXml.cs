@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace KanbanLibrary
 {
-    public interface IConversionXml
+    public interface IConversionXML
     {
+        List<Tache> ChargerDepuisXML(string cheminFichier);
+        void SauvegarderVersXML(string cheminFichier, List<Tache> taches);
     }
 }

@@ -6,7 +6,7 @@
 
 
         <ScrollView>
-            <VerticalStackLayout Padding="20" Spacing="20">
+            <VerticalStackLayout Padding="20" Spacing="20" >
 
                 <Label Text="Tableau des tâches"
                    FontSize="28"
@@ -41,7 +41,7 @@
                                                 </VisualStateGroup>
                                             </VisualStateManager.VisualStateGroups>
 
-                                            <Label Text="{Binding Description}" TextColor="#333"/>
+                                            <Label x:Name="CurrentTask" Text="{Binding Description}" TextColor="#333"/>
                                         </Border>
                                     </DataTemplate>
                                 </CollectionView.ItemTemplate>
@@ -133,7 +133,8 @@
                                 <Label x:Name="TaskDescription"
                    Text="Description..."
                    FontAttributes="Bold"
-                   LineBreakMode="WordWrap"/>
+                   LineBreakMode="WordWrap"
+                   TextColor="Black"/>
 
                                 <Label x:Name="TaskDates"
                    Text="Dates..."

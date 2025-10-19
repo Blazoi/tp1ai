@@ -6,7 +6,7 @@
         public string Description { get; set; }
         public bool Terminee { get; set; }
 
-        public Etape (int numero, string description, bool terminee)
+        public Etape (int numero, string description, bool terminee = false)
         {
             Numero = numero;
             Description = description;

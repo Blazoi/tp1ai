@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{36481858-B2C8-4A4E-B365-5722CA0ABB54}|Biblio de classes\\Biblio de classes.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\biblio de classes\\managementtache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{36481858-B2C8-4A4E-B365-5722CA0ABB54}|Biblio de classes\\Biblio de classes.csproj|solutionrelative:biblio de classes\\managementtache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA0D23B6-649B-4D0B-B752-C3294FF0C2EF}|KanbanMauiApp\\KanbanMauiApp.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\kanbanmauiapp\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA0D23B6-649B-4D0B-B752-C3294FF0C2EF}|KanbanMauiApp\\KanbanMauiApp.csproj|solutionrelative:kanbanmauiapp\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{36481858-B2C8-4A4E-B365-5722CA0ABB54}|Biblio de classes\\Biblio de classes.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\biblio de classes\\tache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{36481858-B2C8-4A4E-B365-5722CA0ABB54}|Biblio de classes\\Biblio de classes.csproj|solutionrelative:biblio de classes\\tache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA0D23B6-649B-4D0B-B752-C3294FF0C2EF}|KanbanMauiApp\\KanbanMauiApp.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\kanbanmauiapp\\data\\taches.xml||{6B79B2C4-8503-4A04-8248-ADCEF2B49CB1}",
+      "RelativeMoniker": "D:0:0:{BA0D23B6-649B-4D0B-B752-C3294FF0C2EF}|KanbanMauiApp\\KanbanMauiApp.csproj|solutionrelative:kanbanmauiapp\\data\\taches.xml||{6B79B2C4-8503-4A04-8248-ADCEF2B49CB1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{36481858-B2C8-4A4E-B365-5722CA0ABB54}|Biblio de classes\\Biblio de classes.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\biblio de classes\\etape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{36481858-B2C8-4A4E-B365-5722CA0ABB54}|Biblio de classes\\Biblio de classes.csproj|solutionrelative:biblio de classes\\etape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA0D23B6-649B-4D0B-B752-C3294FF0C2EF}|KanbanMauiApp\\KanbanMauiApp.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\kanbanmauiapp\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BA0D23B6-649B-4D0B-B752-C3294FF0C2EF}|KanbanMauiApp\\KanbanMauiApp.csproj|solutionrelative:kanbanmauiapp\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F8E1502-0136-408E-94F7-A99F063CFF04}|KanbanLibrary\\KanbanLibrary.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\kanbanlibrary\\managementtache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F8E1502-0136-408E-94F7-A99F063CFF04}|KanbanLibrary\\KanbanLibrary.csproj|solutionrelative:kanbanlibrary\\managementtache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F8E1502-0136-408E-94F7-A99F063CFF04}|KanbanLibrary\\KanbanLibrary.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\kanbanlibrary\\tache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F8E1502-0136-408E-94F7-A99F063CFF04}|KanbanLibrary\\KanbanLibrary.csproj|solutionrelative:kanbanlibrary\\tache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F8E1502-0136-408E-94F7-A99F063CFF04}|KanbanLibrary\\KanbanLibrary.csproj|c:\\users\\jackj\\onedrive\\desktop\\tp1\\kanbanlibrary\\etape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F8E1502-0136-408E-94F7-A99F063CFF04}|KanbanLibrary\\KanbanLibrary.csproj|solutionrelative:kanbanlibrary\\etape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,52 +33,91 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
+          "DockedWidth": 241,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ManagementTache.cs",
-              "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\Biblio de classes\\ManagementTache.cs",
-              "RelativeDocumentMoniker": "Biblio de classes\\ManagementTache.cs",
-              "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\Biblio de classes\\ManagementTache.cs",
-              "RelativeToolTip": "Biblio de classes\\ManagementTache.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA1wHEAAAA9AAAAAAAAAA==",
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "KanbanMauiApp\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\MainPage.xaml.cs",
+              "RelativeToolTip": "KanbanMauiApp\\MainPage.xaml.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAA9wD4AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T23:17:22.168Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Etape.cs",
-              "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\Biblio de classes\\Etape.cs",
-              "RelativeDocumentMoniker": "Biblio de classes\\Etape.cs",
-              "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\Biblio de classes\\Etape.cs",
-              "RelativeToolTip": "Biblio de classes\\Etape.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T23:18:45.832Z",
+              "WhenOpened": "2025-10-19T15:34:30.231Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Tache.cs",
-              "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\Biblio de classes\\Tache.cs",
-              "RelativeDocumentMoniker": "Biblio de classes\\Tache.cs",
-              "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\Biblio de classes\\Tache.cs",
-              "RelativeToolTip": "Biblio de classes\\Tache.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
+              "Title": "taches.xml",
+              "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml",
+              "RelativeDocumentMoniker": "KanbanMauiApp\\Data\\taches.xml",
+              "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml",
+              "RelativeToolTip": "KanbanMauiApp\\Data\\taches.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-10-19T15:32:32.364Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 251,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\MainPage.xaml",
+              "RelativeDocumentMoniker": "KanbanMauiApp\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\MainPage.xaml",
+              "RelativeToolTip": "KanbanMauiApp\\MainPage.xaml",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAIUAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-19T15:34:29.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ManagementTache.cs",
+              "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\ManagementTache.cs",
+              "RelativeDocumentMoniker": "KanbanLibrary\\ManagementTache.cs",
+              "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\ManagementTache.cs",
+              "RelativeToolTip": "KanbanLibrary\\ManagementTache.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwHUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T23:18:26.667Z",
+              "WhenOpened": "2025-10-19T15:40:37.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Tache.cs",
+              "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\Tache.cs",
+              "RelativeDocumentMoniker": "KanbanLibrary\\Tache.cs",
+              "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\Tache.cs",
+              "RelativeToolTip": "KanbanLibrary\\Tache.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T15:40:39.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Etape.cs",
+              "DocumentMoniker": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\Etape.cs",
+              "RelativeDocumentMoniker": "KanbanLibrary\\Etape.cs",
+              "ToolTip": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\Etape.cs",
+              "RelativeToolTip": "KanbanLibrary\\Etape.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T15:40:35.451Z",
               "EditorCaption": ""
             }
           ]

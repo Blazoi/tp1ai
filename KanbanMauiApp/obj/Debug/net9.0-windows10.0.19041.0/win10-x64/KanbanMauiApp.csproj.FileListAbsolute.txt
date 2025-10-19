@@ -515,3 +515,4 @@ C:\Users\jackj\OneDrive\Desktop\TP1\KanbanMauiApp\obj\Debug\net9.0-windows10.0.1
 C:\Users\jackj\OneDrive\Desktop\TP1\KanbanMauiApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt
 C:\Users\jackj\OneDrive\Desktop\TP1\KanbanMauiApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\jackj\OneDrive\Desktop\TP1\KanbanMauiApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
+C:\Users\jackj\OneDrive\Desktop\TP1\KanbanMauiApp\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\KanbanMauiApp.sourcelink.json
