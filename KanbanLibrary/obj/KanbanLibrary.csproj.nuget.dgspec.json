@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\KanbanLibrary.csproj": {}
+    "C:\\Users\\jackj\\OneDrive - Collège de Bois-de-Boulogne\\Bureau\\TP1\\KanbanLibrary\\KanbanLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\KanbanLibrary.csproj": {
+    "C:\\Users\\jackj\\OneDrive - Collège de Bois-de-Boulogne\\Bureau\\TP1\\KanbanLibrary\\KanbanLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\KanbanLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\jackj\\OneDrive - Collège de Bois-de-Boulogne\\Bureau\\TP1\\KanbanLibrary\\KanbanLibrary.csproj",
         "projectName": "KanbanLibrary",
-        "projectPath": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\KanbanLibrary.csproj",
+        "projectPath": "C:\\Users\\jackj\\OneDrive - Collège de Bois-de-Boulogne\\Bureau\\TP1\\KanbanLibrary\\KanbanLibrary.csproj",
         "packagesPath": "C:\\Users\\jackj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanLibrary\\obj\\",
+        "outputPath": "C:\\Users\\jackj\\OneDrive - Collège de Bois-de-Boulogne\\Bureau\\TP1\\KanbanLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

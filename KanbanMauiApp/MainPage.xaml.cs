@@ -13,7 +13,7 @@ namespace KanbanMauiApp
         Etape selectionEtape;
         Tache selectionTache;
         List<Tache> listeDeTaches;
-
+        string chemin = "C:\\Users\\jackj\\OneDrive - Collège de Bois-de-Boulogne\\Bureau\\TP1\\KanbanMauiApp\\Data\\taches.xml";
         public MainPage()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace KanbanMauiApp
         // --- Charger les tâches depuis un fichier ---
         private void ChargerTachesDepuisFichier()
         {
-            List<Tache> liste = manager.ChargerDepuisXML("C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml");
+            List<Tache> liste = manager.ChargerDepuisXML(chemin);
             manager.Taches = liste;
             PlannedTasks.ItemsSource = liste;
             BindingContext = liste;
@@ -33,6 +33,7 @@ namespace KanbanMauiApp
         // --- Sauvegarder les tâches dans un fichier ---
         private void Sauvegarder()
         {
+            manager.SauvegarderVersXML(chemin, listeDeTaches);
         }
         // --- Rafraîchir les listes ---
         private void RafraichirListes()
@@ -52,7 +53,9 @@ namespace KanbanMauiApp
             //Afficher la description
             TaskDescription.Text = selectionTache.Description;
             string format = "dddd MMM dd, yyyy";
-            TaskDates.Text = $"Date de création : {selectionTache.DateCreation.ToString(format)}\nDate de début : {selectionTache.DateDebut?.ToString(format) ?? "non définie"}\nDate de fin : {selectionTache.DateFin?.ToString(format) ?? "non définie\n"}";
+            TaskDates.Text = $"Date de création : {selectionTache.DateCreation.ToString(format)}" +
+                             $"\nDate de début : {selectionTache.DateDebut?.ToString(format) ?? "non définie"}" +
+                             $"\nDate de fin : {selectionTache.DateFin?.ToString(format) ?? "non définie\n"}";
 
             //Afficher les étapes
             TaskSteps.ItemsSource = selectionTache.Etapes;
@@ -77,7 +80,17 @@ namespace KanbanMauiApp
         // --- Suppression d’une tâche ---
         private void OnDeleteTask(object sender, EventArgs e)
         {
-            
+            XmlDocument doc = new();
+            doc.Load(chemin);
+
+            int index = listeDeTaches.IndexOf(selectionTache);
+            XmlNode noeud = doc.SelectSingleNode($"/taches/tache[{index + 1}]");
+            if (selectionTache != null)
+            {
+                listeDeTaches.Remove(selectionTache);
+                noeud.ParentNode.RemoveChild(noeud);
+                Sauvegarder();
+            }
         }
 
         // --- Ajout d’une étape ---
@@ -90,7 +103,7 @@ namespace KanbanMauiApp
         private void OnDeleteStep(object sender, EventArgs e)
         {
             XmlDocument doc = new();
-            doc.Load("C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml");
+            doc.Load(chemin);
             XmlNode noeud = doc.SelectSingleNode($"/taches/tache/etapes/etape[@no='{selectionEtape.Numero}']");
 
             if (selectionEtape != null) {
@@ -99,7 +112,7 @@ namespace KanbanMauiApp
                 RafraichirListes();
                 selectionEtape = null;
             }
-            doc.Save("C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml");
+            Sauvegarder();
         }
 
         // --- Terminer une étape ---
@@ -114,7 +127,7 @@ namespace KanbanMauiApp
         // --- À propos ---
         private async void OnAboutClicked(object sender, EventArgs e)
         {
-     
+            Sauvegarder();
         }
     }
 }

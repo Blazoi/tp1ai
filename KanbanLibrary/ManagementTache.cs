@@ -43,9 +43,12 @@ namespace KanbanLibrary
                 List<Etape> etapes = new();
 
                 //Ajouter les étapes à la liste
-                foreach (XmlNode etape in n["etapes"])
+                foreach (XmlNode etape in n["etapes"].ChildNodes)
                 {
-                    etapes.Add(new Etape(int.Parse(etape.Attributes["no"].Value), etape.InnerText, Boolean.Parse(etape.Attributes["termine"].Value)));
+                    etapes.Add(new Etape(int.Parse(etape.Attributes["no"].Value),
+                                         etape.InnerText,
+                                         Boolean.Parse(etape.Attributes["termine"].Value)
+                                         ));
                 }
 
                 liste.Add(new Tache(desc, dateCreation, dateDebut, dateFin, etapes));
@@ -56,16 +59,16 @@ namespace KanbanLibrary
         public void SauvegarderVersXML(string cheminFichier, List<Tache> taches)
         {
             XmlDocument doc = new();
-            XmlElement TachesElement = doc.CreateElement("Taches");
+            XmlElement TachesElement = doc.CreateElement("taches");
 
             foreach (Tache tache in taches)
             {
                 XmlElement tacheElement = doc.CreateElement("tache");
-
+                string format = "dd/MM/yyyy";
                 //Ajouté attributs
-                tacheElement.SetAttribute("creation", tache.DateCreation.ToString());
-                tacheElement.SetAttribute("debut", tache.DateDebut.ToString());
-                tacheElement.SetAttribute("fin", tache.DateFin.ToString());
+                tacheElement.SetAttribute("creation", tache.DateCreation.ToString(format));
+                tacheElement.SetAttribute("debut", tache.DateDebut?.ToString(format) ?? "works");
+                tacheElement.SetAttribute("fin", tache.DateFin?.ToString(format) ?? "properly");
 
                 //Ajouté description
                 XmlElement description = doc.CreateElement("description");
