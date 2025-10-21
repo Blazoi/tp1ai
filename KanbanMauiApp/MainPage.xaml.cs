@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Xml;
 using KanbanLibrary;
 
 namespace KanbanMauiApp
@@ -36,22 +37,26 @@ namespace KanbanMauiApp
         // --- Rafraîchir les listes ---
         private void RafraichirListes()
         {
-            PlannedTasks.ItemsSource = listeDeTaches;
+            //Réinitialiser et réassigner la liste source
+            TaskSteps.ItemsSource = null;
+            TaskSteps.ItemsSource = listeDeTaches.Find(x => x.Description == selectionTache.Description).Etapes;
         }
 
         // --- Sélection d’une tâche ---
         private void OnTaskSelected(object sender, SelectionChangedEventArgs e)
         {
-            selectionTache = e.CurrentSelection.FirstOrDefault() as Tache;
+            //Trouver l'index de la tâche sélectionnée
+            int index = listeDeTaches.IndexOf(e.CurrentSelection.First() as Tache);
+            selectionTache = listeDeTaches[index];
 
-            Tache selection = e.CurrentSelection.FirstOrDefault() as Tache;
-            TaskDescription.Text = selection.Description;
+            //Afficher la description
+            TaskDescription.Text = selectionTache.Description;
             string format = "dddd MMM dd, yyyy";
-            TaskDates.Text = $"Date de création : {selection.DateCreation.ToString(format)}\nDate de début : {selection.DateDebut?.ToString(format) ?? "non définie"}\nDate de fin : {selection.DateFin?.ToString(format) ?? "non définie\n"}";
+            TaskDates.Text = $"Date de création : {selectionTache.DateCreation.ToString(format)}\nDate de début : {selectionTache.DateDebut?.ToString(format) ?? "non définie"}\nDate de fin : {selectionTache.DateFin?.ToString(format) ?? "non définie\n"}";
 
-            List<Etape> etapes = selection.Etapes;
-            TaskSteps.ItemsSource = etapes;
-            //InitialiserSelectionEtape(selection);
+            //Afficher les étapes
+            TaskSteps.ItemsSource = selectionTache.Etapes;
+            InitialiserSelectionEtape(selectionTache);
         }
 
         // --- Sélection d’une étape ---
@@ -62,8 +67,7 @@ namespace KanbanMauiApp
         // Appelé après que ListeEtapes.ItemsSource soit définie
         private void InitialiserSelectionEtape(Tache tache)
         {
-            Tache t1 = manager.Taches.Find(x => x.Description == tache.Description);
-            selectionEtape = t1.Etapes.Find(x => x.Termine = false);
+            selectionEtape = tache.Etapes.Find(x => x.Termine == false);
         }
         private async void OnAddTask(object sender, EventArgs e)
         {
@@ -85,17 +89,26 @@ namespace KanbanMauiApp
         // --- Suppression d’une étape ---
         private void OnDeleteStep(object sender, EventArgs e)
         {
+            XmlDocument doc = new();
+            doc.Load("C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml");
+            XmlNode noeud = doc.SelectSingleNode($"/taches/tache/etapes/etape[@no='{selectionEtape.Numero}']");
+
             if (selectionEtape != null) {
                 selectionTache.Etapes.Remove(selectionEtape);
-                
+                noeud.ParentNode.RemoveChild(noeud);
                 RafraichirListes();
+                selectionEtape = null;
             }
+            doc.Save("C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml");
         }
 
         // --- Terminer une étape ---
         private void OnCompleteStep(object sender, EventArgs e)
         {
-            selectionEtape.Termine = true;
+            if (selectionEtape != null)
+            {
+                selectionEtape.Termine = true;
+            }
         }
 
         // --- À propos ---

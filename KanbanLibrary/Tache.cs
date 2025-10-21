@@ -7,23 +7,14 @@ using System.Threading.Tasks;
 
 namespace KanbanLibrary
 {
-    public class Tache : INotifyPropertyChanged
+    public class Tache
     {
         public string Description { get; set; }
         public DateOnly DateCreation { get; set; }
         public DateOnly? DateDebut { get; set; }
         public DateOnly? DateFin { get; set; }
 
-        private List<Etape> etapes;
-        public List<Etape> Etapes
-        {
-            get => etapes;
-            set
-            {
-                etapes = value;
-                OnPropertyChanged("Etapes");
-            }
-        }
+        public List<Etape> Etapes { get; set; }
 
         public int Statut { get; set; }
 
@@ -35,13 +26,6 @@ namespace KanbanLibrary
             DateFin = dateFin;
             Etapes = etapes;
             Statut = statut;
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
