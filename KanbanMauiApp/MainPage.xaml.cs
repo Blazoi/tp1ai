@@ -1,6 +1,5 @@
 ﻿using System.Collections.ObjectModel;
 using System.Diagnostics;
-using Android.AdServices.Measurement;
 using KanbanLibrary;
 
 namespace KanbanMauiApp
@@ -11,6 +10,8 @@ namespace KanbanMauiApp
         
         ManagementTache manager = new();
         Etape selectionEtape;
+        Tache selectionTache;
+        List<Tache> listeDeTaches;
 
         public MainPage()
         {
@@ -25,22 +26,24 @@ namespace KanbanMauiApp
             manager.Taches = liste;
             PlannedTasks.ItemsSource = liste;
             BindingContext = liste;
+            listeDeTaches = liste;
         }
 
         // --- Sauvegarder les tâches dans un fichier ---
         private void Sauvegarder()
         {
-            //manager.SauvegarderVersXML("C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml");
         }
         // --- Rafraîchir les listes ---
         private void RafraichirListes()
         {
-            manager.ChargerDepuisXML("C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml");
+            PlannedTasks.ItemsSource = listeDeTaches;
         }
 
         // --- Sélection d’une tâche ---
         private void OnTaskSelected(object sender, SelectionChangedEventArgs e)
         {
+            selectionTache = e.CurrentSelection.FirstOrDefault() as Tache;
+
             Tache selection = e.CurrentSelection.FirstOrDefault() as Tache;
             TaskDescription.Text = selection.Description;
             string format = "dddd MMM dd, yyyy";
@@ -48,7 +51,7 @@ namespace KanbanMauiApp
 
             List<Etape> etapes = selection.Etapes;
             TaskSteps.ItemsSource = etapes;
-            BindingContext = etapes;
+            //InitialiserSelectionEtape(selection);
         }
 
         // --- Sélection d’une étape ---
@@ -60,7 +63,7 @@ namespace KanbanMauiApp
         private void InitialiserSelectionEtape(Tache tache)
         {
             Tache t1 = manager.Taches.Find(x => x.Description == tache.Description);
-            selectionEtape = t1.Etapes.FirstOrDefault();
+            selectionEtape = t1.Etapes.Find(x => x.Termine = false);
         }
         private async void OnAddTask(object sender, EventArgs e)
         {
@@ -82,12 +85,17 @@ namespace KanbanMauiApp
         // --- Suppression d’une étape ---
         private void OnDeleteStep(object sender, EventArgs e)
         {
-            
+            if (selectionEtape != null) {
+                selectionTache.Etapes.Remove(selectionEtape);
+                
+                RafraichirListes();
+            }
         }
 
         // --- Terminer une étape ---
         private void OnCompleteStep(object sender, EventArgs e)
         {
+            selectionEtape.Termine = true;
         }
 
         // --- À propos ---
