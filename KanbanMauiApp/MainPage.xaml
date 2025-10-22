@@ -21,9 +21,10 @@
                         Background="#E6F0FA" Padding="10" WidthRequest="200">
                         <VerticalStackLayout>
                             <Label Text="Planifiées" FontAttributes="Bold" TextColor="#4682B4" HorizontalOptions="Center"/>
-                            <CollectionView x:Name="PlannedTasks" SelectionMode="Single"
-                                        SelectionChanged="OnTaskSelected"
-                                        HeightRequest="200">
+                            <CollectionView x:Name="PlannedTasks"
+                                            SelectionMode="Single"
+                                            SelectionChanged="OnTaskSelected"
+                                            HeightRequest="200">
                                 <CollectionView.ItemTemplate>
                                     <DataTemplate>
                                         <Border Stroke="#4682B4" Style="{StaticResource TaskItemCommonStyle}" BackgroundColor="White">

@@ -10,10 +10,16 @@ namespace KanbanMauiApp
       
         
         ManagementTache manager = new();
+
         Etape selectionEtape;
         Tache selectionTache;
-        List<Tache> listeDeTaches;
-        string chemin = "C:\\Users\\jackj\\OneDrive - Collège de Bois-de-Boulogne\\Bureau\\TP1\\KanbanMauiApp\\Data\\taches.xml";
+
+        List<Tache> listeDeTachesPlanifiees;
+        List<Tache> listeDeTachesEnCours;
+        List<Tache> listeDeTachesCompletees;
+
+        //string chemin = "C:\\Users\\jackj\\OneDrive - Collège de Bois-de-Boulogne\\Bureau\\TP1\\KanbanMauiApp\\Data\\taches.xml";
+        string chemin = "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml";
         public MainPage()
         {
             InitializeComponent();
@@ -24,42 +30,98 @@ namespace KanbanMauiApp
         private void ChargerTachesDepuisFichier()
         {
             List<Tache> liste = manager.ChargerDepuisXML(chemin);
+
+            //Assigner les différentes tâches à de différentes listes selon leur statut
+            List<Tache> liste_p = new();
+            List<Tache> liste_ec = new();
+            List<Tache> liste_c = new();
+
+            foreach (Tache t in liste)
+            {
+                switch (t.Statut)
+                {
+                    case 0:
+                        liste_p.Add(t);
+                        break;
+                    case 1:
+                        liste_ec.Add(t);
+                        break;
+                    case 2:
+                        liste_c.Add(t);
+                        break;
+                }
+            }
+
             manager.Taches = liste;
-            PlannedTasks.ItemsSource = liste;
-            BindingContext = liste;
-            listeDeTaches = liste;
+
+            PlannedTasks.ItemsSource = liste_p;
+            listeDeTachesPlanifiees = liste_p;
+
+            InProgressTasks.ItemsSource = liste_ec;
+            listeDeTachesEnCours = liste_ec;
+
+            CompletedTasks.ItemsSource = liste_c;
+            listeDeTachesCompletees = liste_c;
+
+            //BindingContext = liste;
+            listeDeTachesPlanifiees = liste;
         }
 
         // --- Sauvegarder les tâches dans un fichier ---
         private void Sauvegarder()
         {
-            manager.SauvegarderVersXML(chemin, listeDeTaches);
+            manager.SauvegarderVersXML(chemin, manager.Taches);
         }
         // --- Rafraîchir les listes ---
         private void RafraichirListes()
         {
-            //Réinitialiser et réassigner la liste source
+            ChargerTachesDepuisFichier();
+
+            //Réinitialiser et réassigner les listes sources
             TaskSteps.ItemsSource = null;
-            TaskSteps.ItemsSource = listeDeTaches.Find(x => x.Description == selectionTache.Description).Etapes;
+            TaskSteps.ItemsSource = selectionTache.Etapes;
+
+            PlannedTasks.ItemsSource = null;
+            PlannedTasks.ItemsSource = listeDeTachesPlanifiees;
+
+            InProgressTasks.ItemsSource = null;
+            InProgressTasks.ItemsSource = listeDeTachesEnCours;
+
+            CompletedTasks.ItemsSource = null;
+            CompletedTasks.ItemsSource = listeDeTachesCompletees;
         }
 
         // --- Sélection d’une tâche ---
+
+        //À REFAIRE
         private void OnTaskSelected(object sender, SelectionChangedEventArgs e)
         {
-            //Trouver l'index de la tâche sélectionnée
-            int index = listeDeTaches.IndexOf(e.CurrentSelection.First() as Tache);
-            selectionTache = listeDeTaches[index];
+            //Déselectionner les autres tâches
+            if (listeDeTachesPlanifiees.Contains(selectionTache)) {
+                InProgressTasks.SelectedItem = null;
+                CompletedTasks.SelectedItem = null;
+            } else if (listeDeTachesEnCours.Contains(selectionTache)) {
+                PlannedTasks.SelectedItem = null;
+                CompletedTasks.SelectedItem = null;
+            } else {
+                PlannedTasks.SelectedItem = null;
+                InProgressTasks.SelectedItem = null;
+            }
 
-            //Afficher la description
-            TaskDescription.Text = selectionTache.Description;
-            string format = "dddd MMM dd, yyyy";
-            TaskDates.Text = $"Date de création : {selectionTache.DateCreation.ToString(format)}" +
-                             $"\nDate de début : {selectionTache.DateDebut?.ToString(format) ?? "non définie"}" +
-                             $"\nDate de fin : {selectionTache.DateFin?.ToString(format) ?? "non définie\n"}";
+            ////Trouver l'index de la tâche sélectionnée
+            //int index = listeDeTachesPlanifiees.IndexOf(e.CurrentSelection.First() as Tache);
+            //selectionTache = listeDeTachesPlanifiees[index];
 
-            //Afficher les étapes
-            TaskSteps.ItemsSource = selectionTache.Etapes;
-            InitialiserSelectionEtape(selectionTache);
+            ////Afficher la description
+            //TaskDescription.Text = selectionTache.Description;
+            //string format = "dddd MMM dd, yyyy";
+            //TaskDates.Text = $"Date de création : {selectionTache.DateCreation.ToString(format)}" +
+            //                 $"\nDate de début : {selectionTache.DateDebut?.ToString(format) ?? "non définie"}" +
+            //                 $"\nDate de fin : {selectionTache.DateFin?.ToString(format) ?? "non définie\n"}";
+
+            ////Afficher les étapes
+            //TaskSteps.ItemsSource = selectionTache.Etapes;
+            //InitialiserSelectionEtape();
         }
 
         // --- Sélection d’une étape ---
@@ -68,9 +130,9 @@ namespace KanbanMauiApp
             selectionEtape = e.CurrentSelection.FirstOrDefault() as Etape;
         }
         // Appelé après que ListeEtapes.ItemsSource soit définie
-        private void InitialiserSelectionEtape(Tache tache)
+        private void InitialiserSelectionEtape()
         {
-            selectionEtape = tache.Etapes.Find(x => x.Termine == false);
+            selectionEtape = selectionTache.Etapes.Find(x => x.Termine == false);
         }
         private async void OnAddTask(object sender, EventArgs e)
         {
@@ -80,16 +142,34 @@ namespace KanbanMauiApp
         // --- Suppression d’une tâche ---
         private void OnDeleteTask(object sender, EventArgs e)
         {
+
+            //Retirer la tâche du doc
+            //Retirer la tâche de la liste
             XmlDocument doc = new();
             doc.Load(chemin);
 
-            int index = listeDeTaches.IndexOf(selectionTache);
+            int index = manager.Taches.IndexOf(selectionTache);
             XmlNode noeud = doc.SelectSingleNode($"/taches/tache[{index + 1}]");
+
             if (selectionTache != null)
             {
-                listeDeTaches.Remove(selectionTache);
+                manager.Taches.Remove(selectionTache);
+
+                if (listeDeTachesPlanifiees.Contains(selectionTache))
+                {
+                    listeDeTachesPlanifiees.Remove(selectionTache);
+                } else if (listeDeTachesEnCours.Contains(selectionTache))
+                {
+                    listeDeTachesEnCours.Remove(selectionTache);
+                } else
+                {
+                    listeDeTachesCompletees.Remove(selectionTache);
+                }
                 noeud.ParentNode.RemoveChild(noeud);
-                Sauvegarder();
+                TaskSteps.ItemsSource = null;
+                TaskSteps.ItemsSource = selectionTache.Etapes;
+                RafraichirListes();
+                //Sauvegarder();
             }
         }
 
@@ -120,7 +200,8 @@ namespace KanbanMauiApp
         {
             if (selectionEtape != null)
             {
-                selectionEtape.Termine = true;
+                manager.TerminerEtape(selectionTache, selectionEtape);
+                RafraichirListes();
             }
         }
 

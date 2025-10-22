@@ -25,6 +25,7 @@ namespace KanbanLibrary
             Description = description;
             Termine = termine;
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string propertyName)

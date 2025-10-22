@@ -12,43 +12,43 @@ namespace KanbanLibrary
     public class ManagementTache : IConversionXML
     {
         public List<Tache> Taches { get; set; }
+
         public List<Tache> ChargerDepuisXML(string cheminFichier)
         {
             //Variable à retourner
             List<Tache> liste = new();
 
-            //Charger le document
             XmlDocument doc = new();
             doc.Load(cheminFichier);
-
-            //Créer la liste de noeuds
             XmlNodeList listeNoeuds = doc.GetElementsByTagName("tache");
 
+
             //Ajouter les taches à la liste
-            foreach (XmlNode n in listeNoeuds)
+            foreach (XmlNode noeud in listeNoeuds)
             {
-                //Valeurs du constructeur
-                string desc = n["description"].InnerText;
-                DateOnly dateCreation = DateOnly.ParseExact(n.Attributes["creation"].Value, "dd/MM/yyyy");
+                string desc = noeud["description"].InnerText;
+                DateOnly dateCreation = DateOnly.ParseExact(noeud.Attributes["creation"].Value, "dd/MM/yyyy");
                 DateOnly? dateDebut = null;
                 DateOnly? dateFin = null;
-                if (n.Attributes["debut"].Value != "")
+                if (noeud.Attributes["debut"].Value != "")
                 {
-                    dateDebut = DateOnly.ParseExact(n.Attributes["debut"].Value, "dd/MM/yyyy");
+                    dateDebut = DateOnly.ParseExact(noeud.Attributes["debut"].Value, "dd/MM/yyyy");
                 }
-                if (n.Attributes["fin"].Value != "")
+                if (noeud.Attributes["fin"].Value != "")
                 {
-                    dateFin = DateOnly.ParseExact(n.Attributes["fin"].Value, "dd/MM/yyyy");
+                    dateFin = DateOnly.ParseExact(noeud.Attributes["fin"].Value, "dd/MM/yyyy");
                 }
-                List<Etape> etapes = new();
+
 
                 //Ajouter les étapes à la liste
-                foreach (XmlNode etape in n["etapes"].ChildNodes)
+                List<Etape> etapes = new();
+                foreach (XmlNode etape in noeud["etapes"])
                 {
-                    etapes.Add(new Etape(int.Parse(etape.Attributes["no"].Value),
-                                         etape.InnerText,
-                                         Boolean.Parse(etape.Attributes["termine"].Value)
-                                         ));
+                    int num = int.Parse(etape.Attributes["no"].Value);
+                    string etape_desc = etape.InnerText;
+                    bool termine = bool.Parse(etape.Attributes["termine"].Value);
+
+                    etapes.Add(new Etape(num, etape_desc, termine));
                 }
 
                 liste.Add(new Tache(desc, dateCreation, dateDebut, dateFin, etapes));
@@ -59,7 +59,7 @@ namespace KanbanLibrary
         public void SauvegarderVersXML(string cheminFichier, List<Tache> taches)
         {
             XmlDocument doc = new();
-            XmlElement TachesElement = doc.CreateElement("taches");
+            XmlElement root = doc.CreateElement("taches");
 
             foreach (Tache tache in taches)
             {
@@ -67,8 +67,8 @@ namespace KanbanLibrary
                 string format = "dd/MM/yyyy";
                 //Ajouté attributs
                 tacheElement.SetAttribute("creation", tache.DateCreation.ToString(format));
-                tacheElement.SetAttribute("debut", tache.DateDebut?.ToString(format) ?? "works");
-                tacheElement.SetAttribute("fin", tache.DateFin?.ToString(format) ?? "properly");
+                tacheElement.SetAttribute("debut", tache.DateDebut?.ToString(format) ?? "");
+                tacheElement.SetAttribute("fin", tache.DateFin?.ToString(format) ?? "");
 
                 //Ajouté description
                 XmlElement description = doc.CreateElement("description");
@@ -93,11 +93,11 @@ namespace KanbanLibrary
                 tacheElement.AppendChild(etapes);
 
                 //Ajouté la tâche au root
-                TachesElement.AppendChild(tacheElement);
+                root.AppendChild(tacheElement);
             }
 
             // Ajouté root et sauvegardé
-            doc.AppendChild(TachesElement);
+            doc.AppendChild(root);
             doc.Save(cheminFichier);
         }
 
@@ -109,28 +109,23 @@ namespace KanbanLibrary
 
         public void SupprimerTache(Tache tache)
         {
-            Tache tacheAEnlever = Taches.Find(element => element.Description == tache.Description);
-            Taches.Remove(tacheAEnlever);
+            Taches.Remove(tache);
         }
 
         public void AjouterEtape(Tache tache, string description)
         {
-            //Créé l'étape
             Etape etape = new Etape(Taches.Count + 1, description);
-
-            //Ajouté l'étape
-            Taches.Find(element => element.Description == tache.Description).Etapes.Add(etape);
+            tache.Etapes.Add(etape);
         }
 
         public void SupprimerEtape(Tache tache, Etape etape)
         {
-            Taches.Find(element => element.Description == tache.Description).Etapes.Remove(etape);
+            tache.Etapes.Remove(etape);
         }
 
         public void TerminerEtape(Tache tache, Etape etape)
         {
-            List<Etape> EtapesListe = Taches.Find(element => element.Description == tache.Description).Etapes;
-            EtapesListe.Find(element => element.Description == etape.Description).Termine = true;
+            tache.Etapes.Find(x => x == etape).Termine = true;
         }
     }
 }
