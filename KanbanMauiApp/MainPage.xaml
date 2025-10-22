@@ -128,7 +128,7 @@
 
                         <Label Text="Détails de la tâche" FontSize= "18" FontAttributes="Bold" TextColor="#444"/>
 
-                        <!-- ScrollView pour permettre le défilement -->
+                    <!-- ScrollView pour permettre le défilement -->
                         <ScrollView Orientation="Vertical" HeightRequest="200">
                             <VerticalStackLayout Spacing="5" Padding="10">
 
@@ -204,6 +204,12 @@
                     <VerticalStackLayout>
                         <Label Text="Gestion des tâches" FontAttributes="Bold" FontSize="18" TextColor="#444"/>
                         <HorizontalStackLayout Spacing="12" HorizontalOptions="Center">
+                            <Entry
+                                x:Name="Taches_Entry"
+                                Placeholder="Description de tâche"
+                                WidthRequest="250"
+                                HeightRequest="25"
+                                TextColor="Black"/>
                             <Button Text="Ajouter tâche" Style="{StaticResource OutlinedButtonStyle}" Clicked="OnAddTask"/>
                             <Button Text="Supprimer tâche" Style="{StaticResource OutlinedButtonStyle}" Clicked="OnDeleteTask"/>
                         </HorizontalStackLayout>
@@ -216,7 +222,13 @@
                     <VerticalStackLayout>
                         <Label Text="Gestion des étapes" FontAttributes="Bold" FontSize="18" TextColor="#444"/>
                         <HorizontalStackLayout Spacing="12" HorizontalOptions="Center">
-                            <Button Text="Ajouter étape" Style="{StaticResource OutlinedButtonStyle}" Clicked="OnAddStep"/>
+                        <Entry
+                            x:Name="Etapes_Entry"
+                            Placeholder="Description de tâche"
+                            WidthRequest="250"
+                            HeightRequest="25"
+                            TextColor="Black"/>
+                        <Button Text="Ajouter étape" Style="{StaticResource OutlinedButtonStyle}" Clicked="OnAddStep"/>
                             <Button Text="Supprimer étape" Style="{StaticResource OutlinedButtonStyle}" Clicked="OnDeleteStep"/>
                             <Button Text="Terminer étape" Style="{StaticResource OutlinedButtonStyle}" Clicked="OnCompleteStep"/>
                         </HorizontalStackLayout>

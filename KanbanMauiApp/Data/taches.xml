@@ -16,7 +16,6 @@
   <tache creation="30-09-2025" debut="" fin="">
     <description>Correction du TP #1 de 420-3GP-BB (A2025)</description>
     <etapes>
-      <etape termine="False" no="1">Faire la grille de correction</etape>
       <etape termine="False" no="2">Récupérer travaux sur GitHub</etape>
       <etape termine="False" no="3">Corriger 3 travaux</etape>
       <etape termine="False" no="4">Réviser la grille de correction</etape>
@@ -33,7 +32,6 @@
   <tache creation="30-09-2025" debut="" fin="">
     <description>Correction du TP #1 de 420-3GP-BB (A2025)</description>
     <etapes>
-      <etape termine="False" no="1">Faire la grille de correction</etape>
       <etape termine="False" no="2">Récupérer travaux sur GitHub</etape>
       <etape termine="False" no="3">Corriger 3 travaux</etape>
       <etape termine="False" no="4">Réviser la grille de correction</etape>

@@ -20,7 +20,6 @@ namespace KanbanMauiApp
         List<Tache> listeDeTachesCompletees;
 
         string chemin = "C:\\Users\\jackj\\OneDrive - Collège de Bois-de-Boulogne\\Bureau\\TP1\\KanbanMauiApp\\Data\\taches.xml";
-        //string chemin = "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml";
         public MainPage()
         {
             InitializeComponent();
@@ -75,11 +74,15 @@ namespace KanbanMauiApp
         // --- Rafraîchir les listes ---
         private void RafraichirListes()
         {
+            Sauvegarder();
             ChargerTachesDepuisFichier();
 
             //Réinitialiser et réassigner les listes sources
-            TaskSteps.ItemsSource = null;
-            TaskSteps.ItemsSource = selectionTache.Etapes;
+            if (selectionTache != null)
+            {
+                TaskSteps.ItemsSource = null;
+                TaskSteps.ItemsSource = selectionTache.Etapes;
+            }
 
             PlannedTasks.ItemsSource = null;
             PlannedTasks.ItemsSource = listeDeTachesPlanifiees;
@@ -100,44 +103,6 @@ namespace KanbanMauiApp
 
             if (selectionTache == null)
                 return;
-
-            //Déselectionner les autres tâches
-            //if (listeDeTachesPlanifiees.Contains(selectionTache) ) {
-
-            //    //Désactiver le selectionChanged event
-            //    InProgressTasks.SelectionChanged -= OnTaskSelected;
-            //    CompletedTasks.SelectionChanged -= OnTaskSelected;
-
-            //    InProgressTasks.SelectedItem = null;
-            //    CompletedTasks.SelectedItem = null;
-                
-
-            //    InProgressTasks.SelectionChanged += OnTaskSelected;
-            //    CompletedTasks.SelectionChanged += OnTaskSelected;
-            //}
-            //else if (listeDeTachesEnCours.Contains(selectionTache))
-            //{
-            //    PlannedTasks.SelectionChanged -= OnTaskSelected;
-            //    CompletedTasks.SelectionChanged -= OnTaskSelected;
-
-            //    PlannedTasks.SelectedItem = null;
-            //    CompletedTasks.SelectedItem = null;
-
-            //    PlannedTasks.SelectionChanged += OnTaskSelected;
-            //    CompletedTasks.SelectionChanged += OnTaskSelected;
-            //}
-            //else
-            //{
-            //    PlannedTasks.SelectionChanged -= OnTaskSelected;
-            //    InProgressTasks.SelectionChanged -= OnTaskSelected;
-
-            //    PlannedTasks.SelectedItem = null;
-            //    InProgressTasks.SelectedItem = null;
-
-            //    PlannedTasks.SelectionChanged += OnTaskSelected;
-            //    InProgressTasks.SelectionChanged += OnTaskSelected;
-            //}
-
 
             //Afficher la description
             TaskDescription.Text = selectionTache.Description;
@@ -163,13 +128,21 @@ namespace KanbanMauiApp
         }
         private async void OnAddTask(object sender, EventArgs e)
         {
+            string desc = Taches_Entry.Text;
+            DateOnly dateCreation = DateOnly.FromDateTime(DateTime.Now);
             
+            if (desc != null)
+            {
+                listeDeTachesPlanifiees.Add(new Tache(desc, dateCreation, null, null, new List<Etape>()));
+                manager.Taches.Add(new Tache(desc, dateCreation, null, null, new List<Etape>()));
+                RafraichirListes();
+            }
+
         }
 
         // --- Suppression d’une tâche ---
         private void OnDeleteTask(object sender, EventArgs e)
         {
-
             //Retirer la tâche du doc
             //Retirer la tâche de la liste
             XmlDocument doc = new();
@@ -196,14 +169,22 @@ namespace KanbanMauiApp
                 TaskSteps.ItemsSource = null;
                 TaskSteps.ItemsSource = selectionTache.Etapes;
                 RafraichirListes();
-                //Sauvegarder();
             }
         }
 
         // --- Ajout d’une étape ---
         private async void OnAddStep(object sender, EventArgs e)
         {
-            
+            if (Etapes_Entry.Text != null)
+            {
+                int numero = selectionTache.Etapes.Count + 1;
+                string desc = Etapes_Entry.Text;
+                Etape etape = new Etape(numero, desc);
+
+                manager.Taches.Find(x => x == selectionTache).Etapes.Add(etape);
+
+                RafraichirListes();
+            }
         }
 
         // --- Suppression d’une étape ---
@@ -215,8 +196,8 @@ namespace KanbanMauiApp
 
             if (selectionEtape != null) {
                 selectionTache.Etapes.Remove(selectionEtape);
+                manager.Taches.Find(x => x.Description == selectionTache.Description).Etapes = selectionTache.Etapes;
                 noeud.ParentNode.RemoveChild(noeud);
-                Sauvegarder();
                 RafraichirListes();
                 InitialiserSelectionEtape();
             }
@@ -228,7 +209,6 @@ namespace KanbanMauiApp
             if (selectionEtape != null)
             {
                 manager.TerminerEtape(selectionTache, selectionEtape);
-                Sauvegarder();
                 RafraichirListes();
             }
         }
@@ -236,7 +216,7 @@ namespace KanbanMauiApp
         // --- À propos ---
         private async void OnAboutClicked(object sender, EventArgs e)
         {
-            Sauvegarder();
+
         }
     }
 }

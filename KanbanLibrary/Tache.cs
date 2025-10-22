@@ -35,10 +35,13 @@ namespace KanbanLibrary
             int compte = Etapes.Count;
             int nmb = Etapes.Count(x => x.Termine == true);
 
-            if (nmb == compte)
+            bool aDesEtapes = Etapes.Count > 0;
+            
+             
+            if (nmb == compte && aDesEtapes)
             {
                 Statut = 2;
-            } else if (nmb > 0 && nmb < compte)
+            } else if (nmb > 0 && nmb < compte && aDesEtapes)
             {
                 Statut = 1;
             } else
