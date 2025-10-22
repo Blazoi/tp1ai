@@ -1,8 +1,8 @@
 <taches>
-  <tache creation="30/09/2025" debut="" fin="">
+  <tache creation="30-09-2025" debut="" fin="">
     <description>Préparation du TP #1 de 420-3GP-BB (A2025)</description>
     <etapes>
-      <etape termine="False" no="1">Décider sujet TP</etape>
+      <etape termine="True" no="1">Décider sujet TP</etape>
       <etape termine="False" no="2">Préparer données de travail</etape>
       <etape termine="False" no="3">Faire design préliminaire de l'interface</etape>
       <etape termine="False" no="4">Réaliser le code</etape>
@@ -13,7 +13,7 @@
       <etape termine="False" no="9">Présenter travail en classe</etape>
     </etapes>
   </tache>
-  <tache creation="30/09/2025" debut="" fin="">
+  <tache creation="30-09-2025" debut="" fin="">
     <description>Correction du TP #1 de 420-3GP-BB (A2025)</description>
     <etapes>
       <etape termine="False" no="1">Faire la grille de correction</etape>
@@ -30,7 +30,7 @@
       <etape termine="False" no="12">Transmettre la grille de correction</etape>
     </etapes>
   </tache>
-  <tache creation="30/09/2025" debut="" fin="">
+  <tache creation="30-09-2025" debut="" fin="">
     <description>Correction du TP #1 de 420-3GP-BB (A2025)</description>
     <etapes>
       <etape termine="False" no="1">Faire la grille de correction</etape>
@@ -47,7 +47,7 @@
       <etape termine="False" no="12">Transmettre la grille de correction</etape>
     </etapes>
   </tache>
-  <tache creation="24/09/2025" debut="24/09/2025" fin="">
+  <tache creation="24-09-2025" debut="24-09-2025" fin="">
     <description>Correction du TP #2 de 420-3GP-BB (A2025)</description>
     <etapes>
       <etape termine="True" no="1">Faire la grille de correction</etape>
@@ -63,7 +63,7 @@
       <etape termine="False" no="11">Transmettre la grille de correction</etape>
     </etapes>
   </tache>
-  <tache creation="26/10/2025" debut="27/10/2025" fin="">
+  <tache creation="26-10-2025" debut="27-10-2025" fin="">
     <description>Présentation pour sciences de la nature</description>
     <etapes>
       <etape termine="True" no="1">Trouver données</etape>
@@ -71,10 +71,10 @@
       <etape termine="True" no="3">Développer exemple avec Jupyter Notebook</etape>
       <etape termine="True" no="4">Validation du notebook en département</etape>
       <etape termine="True" no="5">Modifications notebook suite aux remarques du département</etape>
-      <etape termine="False" no="6">Présentation au comité d'élaboration de sciences de la nature</etape>
+      <etape termine="True" no="6">Présentation au comité d'élaboration de sciences de la nature</etape>
     </etapes>
   </tache>
-  <tache creation="26/10/2025" debut="28/10/2025" fin="">
+  <tache creation="26-10-2025" debut="28-10-2025" fin="">
     <description>Préparation du TP #2 de 420-3GP-BB (A2025)</description>
     <etapes>
       <etape termine="True" no="1">Décider sujet TP</etape>
@@ -88,7 +88,7 @@
       <etape termine="False" no="9">Présenter travail en classe</etape>
     </etapes>
   </tache>
-  <tache creation="14/09/2025" debut="14/09/2025" fin="16/09/2025">
+  <tache creation="14-09-2025" debut="14-09-2025" fin="16-09-2025">
     <description>Préparation du TP #1 de 420-3GP-BB (A2025)</description>
     <etapes>
       <etape termine="True" no="1">Décider sujet TP</etape>

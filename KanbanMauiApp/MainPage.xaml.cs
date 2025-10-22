@@ -19,8 +19,8 @@ namespace KanbanMauiApp
         List<Tache> listeDeTachesEnCours;
         List<Tache> listeDeTachesCompletees;
 
-        //string chemin = "C:\\Users\\jackj\\OneDrive - Collège de Bois-de-Boulogne\\Bureau\\TP1\\KanbanMauiApp\\Data\\taches.xml";
-        string chemin = "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml";
+        string chemin = "C:\\Users\\jackj\\OneDrive - Collège de Bois-de-Boulogne\\Bureau\\TP1\\KanbanMauiApp\\Data\\taches.xml";
+        //string chemin = "C:\\Users\\jackj\\OneDrive\\Desktop\\TP1\\KanbanMauiApp\\Data\\taches.xml";
         public MainPage()
         {
             InitializeComponent();
@@ -65,7 +65,6 @@ namespace KanbanMauiApp
             listeDeTachesCompletees = liste_c;
 
             //BindingContext = liste;
-            listeDeTachesPlanifiees = liste;
         }
 
         // --- Sauvegarder les tâches dans un fichier ---
@@ -103,41 +102,41 @@ namespace KanbanMauiApp
                 return;
 
             //Déselectionner les autres tâches
-            if (listeDeTachesPlanifiees.Contains(selectionTache) ) {
+            //if (listeDeTachesPlanifiees.Contains(selectionTache) ) {
 
-                //Désactiver le selectionChanged event
-                InProgressTasks.SelectionChanged -= OnTaskSelected;
-                CompletedTasks.SelectionChanged -= OnTaskSelected;
+            //    //Désactiver le selectionChanged event
+            //    InProgressTasks.SelectionChanged -= OnTaskSelected;
+            //    CompletedTasks.SelectionChanged -= OnTaskSelected;
 
-                InProgressTasks.SelectedItem = null;
-                CompletedTasks.SelectedItem = null;
+            //    InProgressTasks.SelectedItem = null;
+            //    CompletedTasks.SelectedItem = null;
                 
 
-                InProgressTasks.SelectionChanged += OnTaskSelected;
-                CompletedTasks.SelectionChanged += OnTaskSelected;
-            }
-            else if (listeDeTachesEnCours.Contains(selectionTache))
-            {
-                PlannedTasks.SelectionChanged -= OnTaskSelected;
-                CompletedTasks.SelectionChanged -= OnTaskSelected;
+            //    InProgressTasks.SelectionChanged += OnTaskSelected;
+            //    CompletedTasks.SelectionChanged += OnTaskSelected;
+            //}
+            //else if (listeDeTachesEnCours.Contains(selectionTache))
+            //{
+            //    PlannedTasks.SelectionChanged -= OnTaskSelected;
+            //    CompletedTasks.SelectionChanged -= OnTaskSelected;
 
-                PlannedTasks.SelectedItem = null;
-                CompletedTasks.SelectedItem = null;
+            //    PlannedTasks.SelectedItem = null;
+            //    CompletedTasks.SelectedItem = null;
 
-                PlannedTasks.SelectionChanged += OnTaskSelected;
-                CompletedTasks.SelectionChanged += OnTaskSelected;
-            }
-            else
-            {
-                PlannedTasks.SelectionChanged -= OnTaskSelected;
-                InProgressTasks.SelectionChanged -= OnTaskSelected;
+            //    PlannedTasks.SelectionChanged += OnTaskSelected;
+            //    CompletedTasks.SelectionChanged += OnTaskSelected;
+            //}
+            //else
+            //{
+            //    PlannedTasks.SelectionChanged -= OnTaskSelected;
+            //    InProgressTasks.SelectionChanged -= OnTaskSelected;
 
-                PlannedTasks.SelectedItem = null;
-                InProgressTasks.SelectedItem = null;
+            //    PlannedTasks.SelectedItem = null;
+            //    InProgressTasks.SelectedItem = null;
 
-                PlannedTasks.SelectionChanged += OnTaskSelected;
-                InProgressTasks.SelectionChanged += OnTaskSelected;
-            }
+            //    PlannedTasks.SelectionChanged += OnTaskSelected;
+            //    InProgressTasks.SelectionChanged += OnTaskSelected;
+            //}
 
 
             //Afficher la description
@@ -160,7 +159,7 @@ namespace KanbanMauiApp
         // Appelé après que ListeEtapes.ItemsSource soit définie
         private void InitialiserSelectionEtape()
         {
-            selectionEtape = selectionTache.Etapes.Find(x => x.Termine == false);
+            selectionEtape = selectionTache.Etapes?.Find(x => x.Termine == false) ?? null;
         }
         private async void OnAddTask(object sender, EventArgs e)
         {
@@ -217,10 +216,10 @@ namespace KanbanMauiApp
             if (selectionEtape != null) {
                 selectionTache.Etapes.Remove(selectionEtape);
                 noeud.ParentNode.RemoveChild(noeud);
+                Sauvegarder();
                 RafraichirListes();
-                selectionEtape = null;
+                InitialiserSelectionEtape();
             }
-            Sauvegarder();
         }
 
         // --- Terminer une étape ---
@@ -229,6 +228,7 @@ namespace KanbanMauiApp
             if (selectionEtape != null)
             {
                 manager.TerminerEtape(selectionTache, selectionEtape);
+                Sauvegarder();
                 RafraichirListes();
             }
         }
