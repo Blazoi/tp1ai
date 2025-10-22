@@ -97,7 +97,7 @@
                                     <DataTemplate>
                                         <Border Stroke="#2E8B57" Style="{StaticResource TaskItemCommonStyle}" BackgroundColor="White">
                                             <VisualStateManager.VisualStateGroups>
-                                                <VisualStateGroup Name="CommonStates">
+                                                <VisualStateGroup x:Name="VisualState_Termine" Name="CommonStates">
                                                     <VisualState Name="Normal">
                                                         <VisualState.Setters>
                                                             <Setter Property="BackgroundColor" Value="White"/>

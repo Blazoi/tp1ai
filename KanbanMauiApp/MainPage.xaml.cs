@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Xml;
 using KanbanLibrary;
+using Microsoft.Maui.Controls.Internals;
 
 namespace KanbanMauiApp
 {
@@ -96,32 +97,59 @@ namespace KanbanMauiApp
         //À REFAIRE
         private void OnTaskSelected(object sender, SelectionChangedEventArgs e)
         {
+            selectionTache = e.CurrentSelection.FirstOrDefault() as Tache;
+
+            if (selectionTache == null)
+                return;
+
             //Déselectionner les autres tâches
-            if (listeDeTachesPlanifiees.Contains(selectionTache)) {
+            if (listeDeTachesPlanifiees.Contains(selectionTache) ) {
+
+                //Désactiver le selectionChanged event
+                InProgressTasks.SelectionChanged -= OnTaskSelected;
+                CompletedTasks.SelectionChanged -= OnTaskSelected;
+
                 InProgressTasks.SelectedItem = null;
                 CompletedTasks.SelectedItem = null;
-            } else if (listeDeTachesEnCours.Contains(selectionTache)) {
+                
+
+                InProgressTasks.SelectionChanged += OnTaskSelected;
+                CompletedTasks.SelectionChanged += OnTaskSelected;
+            }
+            else if (listeDeTachesEnCours.Contains(selectionTache))
+            {
+                PlannedTasks.SelectionChanged -= OnTaskSelected;
+                CompletedTasks.SelectionChanged -= OnTaskSelected;
+
                 PlannedTasks.SelectedItem = null;
                 CompletedTasks.SelectedItem = null;
-            } else {
+
+                PlannedTasks.SelectionChanged += OnTaskSelected;
+                CompletedTasks.SelectionChanged += OnTaskSelected;
+            }
+            else
+            {
+                PlannedTasks.SelectionChanged -= OnTaskSelected;
+                InProgressTasks.SelectionChanged -= OnTaskSelected;
+
                 PlannedTasks.SelectedItem = null;
                 InProgressTasks.SelectedItem = null;
+
+                PlannedTasks.SelectionChanged += OnTaskSelected;
+                InProgressTasks.SelectionChanged += OnTaskSelected;
             }
 
-            ////Trouver l'index de la tâche sélectionnée
-            //int index = listeDeTachesPlanifiees.IndexOf(e.CurrentSelection.First() as Tache);
-            //selectionTache = listeDeTachesPlanifiees[index];
 
-            ////Afficher la description
-            //TaskDescription.Text = selectionTache.Description;
-            //string format = "dddd MMM dd, yyyy";
-            //TaskDates.Text = $"Date de création : {selectionTache.DateCreation.ToString(format)}" +
-            //                 $"\nDate de début : {selectionTache.DateDebut?.ToString(format) ?? "non définie"}" +
-            //                 $"\nDate de fin : {selectionTache.DateFin?.ToString(format) ?? "non définie\n"}";
+            //Afficher la description
+            TaskDescription.Text = selectionTache.Description;
+            string format = "dddd MMM dd, yyyy";
+            TaskDates.Text = $"Date de création : {selectionTache.DateCreation.ToString(format)}" +
+                             $"\nDate de début : {selectionTache.DateDebut?.ToString(format) ?? "non définie"}" +
+                             $"\nDate de fin : {selectionTache.DateFin?.ToString(format) ?? "non définie\n"}";
 
-            ////Afficher les étapes
-            //TaskSteps.ItemsSource = selectionTache.Etapes;
-            //InitialiserSelectionEtape();
+            //Afficher les étapes
+            TaskSteps.ItemsSource = selectionTache.Etapes;
+            InitialiserSelectionEtape();
         }
 
         // --- Sélection d’une étape ---
