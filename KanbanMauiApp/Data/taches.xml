@@ -2,10 +2,9 @@
   <tache creation="30-09-2025" debut="" fin="">
     <description>Préparation du TP #1 de 420-3GP-BB (A2025)</description>
     <etapes>
-      <etape termine="True" no="1">Décider sujet TP</etape>
       <etape termine="False" no="2">Préparer données de travail</etape>
       <etape termine="False" no="3">Faire design préliminaire de l'interface</etape>
-      <etape termine="False" no="4">Réaliser le code</etape>
+      <etape termine="True" no="4">Réaliser le code</etape>
       <etape termine="False" no="5">Améliorer design interface</etape>
       <etape termine="False" no="6">Créer template GitHub</etape>
       <etape termine="False" no="7">Écrire énoncé de TP</etape>
@@ -16,7 +15,7 @@
   <tache creation="30-09-2025" debut="" fin="">
     <description>Correction du TP #1 de 420-3GP-BB (A2025)</description>
     <etapes>
-      <etape termine="False" no="2">Récupérer travaux sur GitHub</etape>
+      <etape termine="True" no="2">Récupérer travaux sur GitHub</etape>
       <etape termine="False" no="3">Corriger 3 travaux</etape>
       <etape termine="False" no="4">Réviser la grille de correction</etape>
       <etape termine="False" no="5">Corriger 10 travaux</etape>
@@ -32,7 +31,7 @@
   <tache creation="30-09-2025" debut="" fin="">
     <description>Correction du TP #1 de 420-3GP-BB (A2025)</description>
     <etapes>
-      <etape termine="False" no="2">Récupérer travaux sur GitHub</etape>
+      <etape termine="True" no="2">Récupérer travaux sur GitHub</etape>
       <etape termine="False" no="3">Corriger 3 travaux</etape>
       <etape termine="False" no="4">Réviser la grille de correction</etape>
       <etape termine="False" no="5">Corriger 10 travaux</etape>
@@ -96,6 +95,12 @@
       <etape termine="True" no="5">Écrire énoncé de TP</etape>
       <etape termine="True" no="6">Créer travail sur Lea</etape>
       <etape termine="True" no="7">Présenter travail en classe</etape>
+    </etapes>
+  </tache>
+  <tache creation="23-10-2025" debut="" fin="">
+    <description>tache ajoutée</description>
+    <etapes>
+      <etape termine="True" no="1">étape 1 ajoutée</etape>
     </etapes>
   </tache>
 </taches>
