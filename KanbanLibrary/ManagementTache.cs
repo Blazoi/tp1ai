@@ -52,6 +52,7 @@ namespace KanbanLibrary
                 }
 
                 liste.Add(new Tache(desc, dateCreation, dateDebut, dateFin, etapes));
+
             }
 
             return liste;

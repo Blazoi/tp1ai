@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KanbanMauiApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+601263631b2e513747ba6f0e0ec8571f8314d950")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+96f63b95561e53d2ba256dea7e607548e9bd1f2a")]
 [assembly: System.Reflection.AssemblyProductAttribute("KanbanMauiApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KanbanMauiApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -97,7 +97,7 @@
                                     <DataTemplate>
                                         <Border Stroke="#2E8B57" Style="{StaticResource TaskItemCommonStyle}" BackgroundColor="White">
                                             <VisualStateManager.VisualStateGroups>
-                                                <VisualStateGroup x:Name="VisualState_Termine" Name="CommonStates">
+                                                <VisualStateGroup Name="CommonStates">
                                                     <VisualState Name="Normal">
                                                         <VisualState.Setters>
                                                             <Setter Property="BackgroundColor" Value="White"/>
@@ -236,12 +236,12 @@
                 </Border>
 
                 <!-- À propos -->
-                <Button Text="À propos..."
+            <Button Text="À propos..."
                     Style="{StaticResource FilledButtonStyle}"
                     HorizontalOptions="Center"
                     WidthRequest="160"
                     Clicked="OnAboutClicked"/>
-            </VerticalStackLayout>
+        </VerticalStackLayout>
         </ScrollView>
 
 

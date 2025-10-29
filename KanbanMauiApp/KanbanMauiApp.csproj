@@ -72,4 +72,10 @@
 	  <ProjectReference Include="..\KanbanLibrary\KanbanLibrary.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Update="Data\taches.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
 </Project>

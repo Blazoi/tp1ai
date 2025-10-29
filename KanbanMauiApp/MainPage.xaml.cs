@@ -15,7 +15,7 @@ namespace KanbanMauiApp
         Etape selectionEtape;
         Tache selectionTache;
 
-        string chemin = "C:\\Users\\jackj\\OneDrive - Collège de Bois-de-Boulogne\\Bureau\\TP1\\KanbanMauiApp\\Data\\taches.xml";
+        string chemin = Path.Combine("Data", "taches.xml");
         public MainPage()
         {
             InitializeComponent();
@@ -25,15 +25,13 @@ namespace KanbanMauiApp
         // --- Charger les tâches depuis un fichier ---
         private void ChargerTachesDepuisFichier()
         {
-            List<Tache> liste = manager.ChargerDepuisXML(chemin);
-
-            manager.Taches = liste;
+            manager.Taches = manager.ChargerDepuisXML(chemin); ;
 
             PlannedTasks.ItemsSource = manager.Taches.Where(x => x.Statut == 0);
             InProgressTasks.ItemsSource = manager.Taches.Where(x => x.Statut == 1);
             CompletedTasks.ItemsSource = manager.Taches.Where(x => x.Statut == 2);
         }
-
+        
         // --- Sauvegarder les tâches dans un fichier ---
         private void Sauvegarder()
         {
@@ -63,8 +61,6 @@ namespace KanbanMauiApp
         }
 
         // --- Sélection d’une tâche ---
-
-        //À REFAIRE
         private void OnTaskSelected(object sender, SelectionChangedEventArgs e)
         {
             selectionTache = e.CurrentSelection.FirstOrDefault() as Tache;
@@ -78,7 +74,8 @@ namespace KanbanMauiApp
                 CompletedTasks.SelectionChanged -= OnTaskSelected;
                 CompletedTasks.SelectedItem = null;
                 CompletedTasks.SelectionChanged += OnTaskSelected;
-            } else if (selectionTache.Statut == 1)
+            }
+            else if (selectionTache.Statut == 1)
             {
                 PlannedTasks.SelectionChanged -= OnTaskSelected;
                 PlannedTasks.SelectedItem = null;
@@ -87,7 +84,8 @@ namespace KanbanMauiApp
                 CompletedTasks.SelectionChanged -= OnTaskSelected;
                 CompletedTasks.SelectedItem = null;
                 CompletedTasks.SelectionChanged += OnTaskSelected;
-            } else if (selectionTache.Statut == 2)
+            }
+            else if (selectionTache.Statut == 2)
             {
                 PlannedTasks.SelectionChanged -= OnTaskSelected;
                 PlannedTasks.SelectedItem = null;
@@ -196,7 +194,7 @@ namespace KanbanMauiApp
         // --- À propos ---
         private async void OnAboutClicked(object sender, EventArgs e)
         {
-
+            await DisplayAlert("Système de gestion de tâches", "Version 3.2\nJack Adam's Dieujuste", "Fermer");
         }
     }
 }
