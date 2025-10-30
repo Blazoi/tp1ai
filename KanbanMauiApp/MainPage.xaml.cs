@@ -65,35 +65,19 @@ namespace KanbanMauiApp
         {
             selectionTache = e.CurrentSelection.FirstOrDefault() as Tache;
 
-            if (selectionTache.Statut == 0)
-            {
-                InProgressTasks.SelectionChanged -= OnTaskSelected;
-                InProgressTasks.SelectedItem = null;
-                InProgressTasks.SelectionChanged += OnTaskSelected;
-
-                CompletedTasks.SelectionChanged -= OnTaskSelected;
-                CompletedTasks.SelectedItem = null;
-                CompletedTasks.SelectionChanged += OnTaskSelected;
+            if (selectionTache.Statut == 0) {
+                DesactiverSelectionChanged(InProgressTasks);
+                DesactiverSelectionChanged(CompletedTasks);
             }
             else if (selectionTache.Statut == 1)
             {
-                PlannedTasks.SelectionChanged -= OnTaskSelected;
-                PlannedTasks.SelectedItem = null;
-                PlannedTasks.SelectionChanged += OnTaskSelected;
-
-                CompletedTasks.SelectionChanged -= OnTaskSelected;
-                CompletedTasks.SelectedItem = null;
-                CompletedTasks.SelectionChanged += OnTaskSelected;
+                DesactiverSelectionChanged(PlannedTasks);
+                DesactiverSelectionChanged(CompletedTasks);
             }
             else if (selectionTache.Statut == 2)
             {
-                PlannedTasks.SelectionChanged -= OnTaskSelected;
-                PlannedTasks.SelectedItem = null;
-                PlannedTasks.SelectionChanged += OnTaskSelected;
-
-                InProgressTasks.SelectionChanged -= OnTaskSelected;
-                InProgressTasks.SelectedItem = null;
-                InProgressTasks.SelectionChanged += OnTaskSelected;
+                DesactiverSelectionChanged(PlannedTasks);
+                DesactiverSelectionChanged(InProgressTasks);
             }
 
             //Description
@@ -195,6 +179,13 @@ namespace KanbanMauiApp
         private async void OnAboutClicked(object sender, EventArgs e)
         {
             await DisplayAlert("Système de gestion de tâches", "Version 3.2\nJack Adam's Dieujuste", "Fermer");
+        }
+        
+        private void DesactiverSelectionChanged(CollectionView col1)
+        {
+            col1.SelectionChanged -= OnTaskSelected;
+            col1.SelectedItem = null;
+            col1.SelectionChanged += OnTaskSelected;
         }
     }
 }
