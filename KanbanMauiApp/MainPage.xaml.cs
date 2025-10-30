@@ -15,7 +15,7 @@ namespace KanbanMauiApp
         Etape selectionEtape;
         Tache selectionTache;
 
-        string chemin = Path.Combine("Data", "taches.xml");
+        string chemin = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "taches.xml");
         public MainPage()
         {
             InitializeComponent();
